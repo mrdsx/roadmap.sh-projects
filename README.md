@@ -9,4 +9,5 @@ The goal of this repo is to apply what I'm learning by building real-world, hand
 Each project is built using the recommended tools and approaches (e.g., HTML, CSS, JavaScript), and serves as a step in my journey to becoming a better developer.
 
 ## 🗂️ Projects
- - Single-Page CV (https://roadmap.sh/projects/single-page-cv)
+ - [Single-Page CV](https://roadmap.sh/projects/single-page-cv)
+ - [Basic HTML Website](https://roadmap.sh/projects/basic-html-website)
