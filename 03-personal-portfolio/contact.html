@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic HTML Website</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <div class="my-name">
+        <p>John Pork</p>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="articles.html">Articles</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="toggle-theme" onclick="toggleTheme()">
+        <img src="assets/moon_image.png" alt="" id="moon_icon"
+        width="30vw" height="30vh" style="display: block;">
+        <img src="assets/sun_image.png" alt="" id="sun_icon"
+        width="30vw" height="30vh" style="display: none;">
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact">
+      <h1>Contact me</h1>
+        <section class="forms">
+          <div class="contact-form">
+            <p>Name: </p>
+            <input type="text">
+          </div>
+          
+          <div class="contact-form">
+            <p>E-mail: </p>
+            <input type="text">
+          </div>
+          
+          <div class="contact-form">
+            <p>Message: </p>
+            <textarea name="" id=""></textarea>
+          </div>
+          
+          <div class="contact-form">
+            <input type="button" value="Send message">
+          </div>
+        </section>
+    </section>
+  </main>
+
+  <footer>
+    <p class="copyright">&copy; All right reserved 2025</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

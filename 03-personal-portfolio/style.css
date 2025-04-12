@@ -1,0 +1,197 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.dark {
+  --background-color: #121212;
+  --border-color: white;
+  --text-color: #e0e0e0;
+  --link-color: #800080;
+}
+
+body {
+  --background-color: white;
+  --border-color: black;
+  --secondary-border-color: rgb(110, 110, 110);
+  --text-color: black;
+  --link-color: blue;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+h1, h2, h3, p, li, textarea {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  padding: 5px;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--secondary-border-color);
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 1rem;
+    ul {
+      margin-top: 0.2rem;
+      li {
+        display: inline;
+      }
+    }
+    button {
+      margin-left: 0.5rem;
+      background-color: transparent;
+      border-radius: 2rem;
+      cursor: pointer;
+      border: none;
+      outline: none;
+    }
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  text-align: center;
+  padding: 12vh;
+}
+
+.about {
+  display: flex;
+  min-height: 340px;
+  padding: 0 2rem 0 2rem;
+  .projects1 {
+    width: 25vw;
+    ul li {
+      padding: 0.7rem;
+      padding-left: 1rem;
+    }
+  }
+  .experience {
+    width: 45vw;
+    section {
+      padding: 1rem;
+    }
+  }
+  .education {
+    width: 30vw;
+    section {
+      padding: 0 1rem 0 1rem;
+    }
+  }
+  h2 {
+    padding: 1rem;
+  }
+}
+
+.reviews-section {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .reviews {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1.5rem;
+    gap: 2rem;
+  }
+  .review {
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    border-radius: 2rem;
+  }
+  .reviewer {
+    color: rgb(182, 182, 182);
+  }
+}
+
+.projects2, .articles, .contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.contact-form {
+  padding: 1rem 0 1rem 0;
+  input, textarea {
+    padding: 0.5rem;
+    background-color: var(--background-color);
+    border-radius: 0.5rem;
+    border: 1px solid var(--secondary-border-color);
+    outline: none;
+    color: var(--text-color);
+    font-size: 1rem;
+    width: 187px;
+  }
+  textarea {
+    height: 12vh;
+    resize: none;
+  }
+  input[type="button"] {
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 900px) {
+  .about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2, .projects1 {
+      text-align: center;
+    }
+    .projects1, .experience, .education {
+      width: 80vw;
+      margin-bottom: 1.5rem;
+    }
+  }
+  .projects2-list, .articles-list {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 500px) {
+  header nav button {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  header nav ul {
+    display: none;
+  }
+}
+
+footer {
+  margin: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--secondary-border-color);
+  text-align: center;
+}
