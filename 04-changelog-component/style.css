@@ -1,0 +1,78 @@
+*, *:before, *:after {
+  /* <-- CSS variables --> */
+  margin: 0;
+  padding: 0;
+  --margin-between-changes: 2.5rem;
+}
+
+body {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1rem;
+}
+
+.secondary-text {
+  color: #a9a9a9;
+}
+
+.heading {
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .title {
+    padding: 1rem;
+    font-size: 2.5rem;
+  }
+}
+
+.changelog {
+  display: flex;
+  justify-content: center;
+  .changelog-date-list {
+    text-align: end;
+  }
+  .changelog-change-list {
+    text-align: start;
+  }
+  .changelog-date-list, .changelog-change-list {
+    ul li {
+      line-height: 1rem;
+      list-style: none;
+      margin-top: var(--margin-between-changes);
+      margin-bottom: var(--margin-between-changes);
+    }
+  }
+
+  .changelog-line {
+    margin: 0 3rem 0 3rem;
+    width: 0;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    .separator {
+      justify-self: center;
+      margin-top: var(--margin-between-changes);
+      margin-bottom: var(--margin-between-changes);
+      width: 1rem;
+      height: 1rem;
+      background: black;
+      border-radius: 50%;
+    }
+  }
+}
+
+.visit-changelog-btn {
+  margin: 2rem 0 2rem 0;
+  input {
+    padding: 1rem 2.5rem 1rem 2.5rem;
+    border-radius: 0.5rem;
+    background: black;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  input:hover {
+    background: rgb(24, 24, 24);
+  }
+}
