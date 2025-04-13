@@ -4,7 +4,7 @@ This repository is a collection of beginner-friendly and practical projects insp
 
 ## 📚 About
 
-The goal of this repo is to apply what I'm learning by building real-world, hands-on projects from the [roadmap.sh Projects](https://roadmap.sh/projects) list.
+The goal of this repo is to apply what I'm learning by building real-world, hands-on projects from the [roadmap.sh projects](https://roadmap.sh/projects) list.
 
 ## 🗂️ Projects
  - [Single-Page CV](https://roadmap.sh/projects/single-page-cv)
