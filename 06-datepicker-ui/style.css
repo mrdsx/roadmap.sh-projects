@@ -1,0 +1,90 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  --border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  padding-top: 30vh;
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+}
+
+.datepicker-input1 {
+  --elements-height: 2.5rem;
+  display: flex;
+  width: 14rem;
+  height: var(--elements-height);
+  border: 1px solid black;
+  border-radius: var(--border-radius);
+  position: relative;
+  #date-input {
+    padding: 0 0.5rem 0 0.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    outline: none;
+  }
+  #date-btn {
+    width: var(--elements-height);
+    background-image: url("assets/calendar-icon.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+    border-left: 1px solid black;
+    border-radius: var(--border-radius);
+    outline: none;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+}
+
+.datepicker-input2 {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 0.5rem;
+  padding-top: 0.6rem;
+  height: 12rem;
+  border: 1px solid black;
+  border-radius: var(--border-radius);
+  position: relative;
+  .period-picker {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 1rem 0 1rem;
+    #arrow-right {
+      transform: rotate(180deg);
+    }
+    #arrow-left, #arrow-right, p {
+      cursor: pointer;
+    }
+  }
+  .day-picker {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    .day-of-the-week {
+      border-bottom: 1px solid black;
+    }
+    .day {
+      cursor: pointer;
+    }
+    .day:hover {
+      border-radius: 10rem;
+      background: rgb(230, 230, 230);
+    }
+    .day-of-the-week, .day {
+      padding: 0.2rem;
+    }
+  }
+}
