@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessible Form UI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <form id="profile-info-form">
+      <div class="profile-info-input" id="name-input">
+        <label for="name">Full name</label>
+        <input type="text" id="name" name="name" placeholder="How should we call you?">
+        <p class="error-message">Name is required</p>
+      </div>
+
+      <div class="profile-info-input" id="email-input">
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" placeholder="What's your email?">
+        <p class="error-message">Email is required</p>
+      </div>
+
+      <div class="profile-info-input" id="password-input">
+        <label for="password">Enter password</label>
+        <input type="password" id="password" name="password"
+        placeholder="xxxxxxxx">
+        <p class="error-message">Password is required</p>
+      </div>
+
+      <div class="profile-info-input" id="confirm-password-input">
+        <label for="confirm-password">Confirm password</label>
+        <input type="password" id="confirm-password" name="confirm-password"
+        placeholder="xxxxxxxx">
+        <p class="error-message">Confirming password is required</p>
+      </div>
+
+      <div class="profile-info-input">
+        <input type="submit" id="sumbit" value="Update profile">
+      </div>
+    </form>
+
+    <section class="completeness-progress">
+      <div class="percentage"><span>65%</span></div>
+      <h1>Profile completeness</h1>
+      <section class="checklist">
+        <p class="completed">Create account</p>
+        <p class="completed">Update roadmap progress</p>
+        <p class="completed">Setup public profile</p>
+        <p>Complete your first projects</p>
+        <p>Invite your friends</p>
+      </section>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
