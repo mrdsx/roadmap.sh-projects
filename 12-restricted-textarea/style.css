@@ -1,0 +1,55 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+h1, textarea {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+.container {
+  --c: black;
+  --input-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  height: 18rem;
+  width: 25rem;
+  position: relative;
+  .message-area {
+    height: 100%;
+    width: 100%;
+    border: 2px solid var(--c);
+    border-radius: var(--input-radius);
+  }
+  #message {
+    padding: 0.5rem;
+    color: var(--c);
+    border: none;
+    border-radius: var(--input-radius);
+    outline: none;
+    resize: none;
+    height: 100%;
+    width: 100%;
+    font-size: 1.2rem;
+  }
+  #counter {
+    color: var(--c);
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 1.2rem;
+  }
+}
