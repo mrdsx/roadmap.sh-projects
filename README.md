@@ -17,3 +17,4 @@ The goal of this repo is to apply what I'm learning by building real-world, hand
  - [Grid Image Layout](https://roadmap.sh/projects/image-grid)
  - [Tooltip UI](https://roadmap.sh/projects/tooltip-ui)
  - [Simple Tabs](https://roadmap.sh/projects/simple-tabs)
+ - [Cookie Consent](https://roadmap.sh/projects/cookie-consent)
