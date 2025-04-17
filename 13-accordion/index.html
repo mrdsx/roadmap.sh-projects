@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accordion</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>FAQ</h1>
+    <p>Here are some of the frequently asked questions</p>
+    <section class="questions">
+      <!-- question 1 -->
+      <div class="question">
+        <button class="question-link" onclick="showAnswer('answer1')">What is roadmap.sh?</button>
+        <div class="answer" id="answer1">
+          <b>roadmap.sh</b> contains community-curated roadmaps, study plans, paths,
+          and resources for developers. There are role-based roadmaps, listing skills
+          you should know for any given role, as well as skill-based roadmaps listing items
+          to learn for any given skill.
+          <br><br>
+          It started as a set of <a href="https://github.com/kamranahmedse/developer-roadmap">visual charts on GitHub</a>
+          to guide developers who are confused about what they should learn next, but then expanded
+          into interactive roadmaps where you can click and get resources to learn any given resource,
+          contribute by adding new roadmaps, suggest changes to existing roadmaps, track your progress
+          as you follow a roadmap and so on.
+        </div>
+      </div>
+      <!-- question 2 -->
+      <div class="question">
+        <button class="question-link" onclick="showAnswer('answer2')">What are the plans for roadmap.sh?</button>
+        <div class="answer" id="answer2">
+          Our long-term plan is to make roadmap.sh a go-to place for developers
+          whenever they plan on learning something new. We started with roadmaps,
+          guides, videos and other visual content but we plan on introducing best practices,
+          best-practices for certain tasks, quizzes to test your knowledge and prepare yourself
+          for the interviews, project ideas to work on while following the roadmaps, public
+          profiles to share your progress and interact with the other learners and so on.
+        </div>
+      </div>
+      <!-- question 3 -->
+      <div class="question">
+        <button class="question-link" onclick="showAnswer('answer3')">How is roadmap.sh built?</button>
+        <div class="answer" id="answer3">
+          The website is built with <a href="https://astro.build">Astro</a> and
+          <a href="https://tailwindcss.com">Tailwind</a> and is deployed to
+          <a href="https://pages.github.com">GitHub pages</a> The project is open-core
+          and the codebase <a href="https://github.com/kamranahmedse/developer-roadmap">can be found on GitHub</a>.
+        </div>
+      </div>
+      <!-- question 4 -->
+      <div class="question">
+        <button class="question-link" onclick="showAnswer('answer4')">How are roadmaps created?</button>
+        <div class="answer" id="answer4">
+          The project has a strong community that powers everything on the website.
+          It is <a href="https://github.com/search?o=desc&q=stars%3A>100000&s=stars&type=Repositories">
+          the 7th most starred opensource project on GitHub</a> and gets visited by hundreds of
+          thousands of developers every month. We also have newsletter with 150,000+ developers.
+          All the roadmaps are created and reviewed by community and several subject matter experts.
+          Also, anyone can suggest changes to any roadmap and we have a process to review and approve them.
+        </div>
+      </div>
+      <!-- question 5 -->
+      <div class="question">
+        <button class="question-link" onclick="showAnswer('answer5')">How can I add a new roadmaps?</button>
+        <div class="answer" id="answer5">
+          For new roadmaps, please open an issue with the textual description
+          of the roadmap in the form of bulleted list. Here is an
+          <a href="https://github.com/kamranahmedse/developer-roadmap/issues/1387#issue-1329276631">
+          example contribution of a new roadmap</a>.
+          <br><br>
+          Find more details in the
+          <a href="https://github.com/kamranahmedse/developer-roadmap/blob/master/contributing.md">
+          contribution docs</a>.
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

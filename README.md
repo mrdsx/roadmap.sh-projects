@@ -19,3 +19,4 @@ The goal of this repo is to apply what I'm learning by building real-world, hand
  - [Simple Tabs](https://roadmap.sh/projects/simple-tabs)
  - [Cookie Consent](https://roadmap.sh/projects/cookie-consent)
  - [Restricted Textarea](https://roadmap.sh/projects/restricted-textarea)
+ - [Accordion](https://roadmap.sh/projects/accordion)
