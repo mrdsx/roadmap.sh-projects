@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabs</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="tab-links">
+      <button class="tab-link active" id="first-tab" onclick="openTab(event, 'tab1')">First tab</button>
+      <button class="tab-link" id="second-tab" onclick="openTab(event, 'tab2')">Second tab</button>
+      <button class="tab-link" id="third-tab" onclick="openTab(event, 'tab3')">Third tab</button>
+      <button class="tab-link" id="fourth-tab" onclick="openTab(event, 'tab4')">Fourth tab</button>
+    </div>
+
+    <!-- tab 1 -->
+    <div class="tab-content" id="tab1">
+      <h1>This is the content of first tab. It's shown by default.</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </p>
+    </div>
+    <!-- tab 2 -->
+    <div class="tab-content" id="tab2">
+      <h1>This is the content for second tab.</h1>
+      <p>
+        Suspendisse nec mauris at purus mattis accumsan. Mauris fringilla eros vitae erat dictum gravida.
+      </p>
+    </div>
+    <!-- tab 3 -->
+    <div class="tab-content" id="tab3">
+      <h1>This is the content for third tab.</h1>
+      <p>
+        Praesent vitae nisi in quam consectetur laoreet. Curabitur in placerat odio.
+      </p>
+    </div>
+    <!-- tab 4 -->
+    <div class="tab-content" id="tab4">
+      <h1>This is the content for fourth tab.</h1>
+      <p>
+        Cras iaculis malesuada vehicula. Mauris lobortis velit et aliquam venenatis.
+      </p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
