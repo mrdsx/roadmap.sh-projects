@@ -1,0 +1,125 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+span {
+  font-size: 1rem;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.tabs ul {
+  --display-tooltip: none;
+  margin-top: 40vh;
+  display: flex;
+  white-space: nowrap;
+  list-style: none;
+  text-align: center;
+  gap: 3rem;
+  li {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1rem;
+    a {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      font-size: 1.5rem;
+      color: black;
+      transition: 0.1s linear;
+      text-decoration: none;
+      position: relative;
+    }
+    a span {
+      padding: 0.5rem;
+      position: absolute;
+      top: -2.5rem;
+      background-color: rgb(48, 48, 48);
+      border-radius: 0.5rem;
+      color: white;
+      outline: none;
+    }
+    a span::after {
+      content: "";
+      background: rgb(48, 48, 48);
+      width: 0.7rem;
+      height: 0.7rem;
+      position: absolute;
+      bottom: -0.3rem;
+      left: 50%;
+      right: 50%;
+      transform: rotate(45deg);
+    }
+    a #home-tooltip {
+      animation: fade 300ms;
+    }
+    a #about-tooltip {
+      animation: slide-to-top 300ms;
+    }
+    a #services-tooltip {
+      animation: slide-to-bottom 300ms;
+    }
+    a #contact-tooltip {
+      animation: scaling 300ms;
+    }
+    a:hover {
+      color: rgb(0, 119, 255);
+      transition: 0.2s linear;
+      --display-tooltip: auto;
+    }
+  }
+  .tooltip {
+    display: var(--display-tooltip);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-to-top {
+  0% {
+    top: -1.8rem;
+    opacity: 0;
+  }
+  100% {
+    top: -2.5rem;
+    opacity: 1;
+  }
+}
+
+@keyframes slide-to-bottom {
+  0% {
+    top: -3.2rem;
+    opacity: 0;
+  }
+  100% {
+    top: -2.5rem;
+    opacity: 1;
+  }
+}
+
+@keyframes scaling {
+  0% {
+    opacity: 0;
+    scale: 0.6;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
