@@ -15,3 +15,4 @@ The goal of this repo is to apply what I'm learning by building real-world, hand
  - [Datepicker UI](https://roadmap.sh/projects/datepicker-ui)
  - [Accessible Form UI](https://roadmap.sh/projects/accessible-form-ui)
  - [Grid Image Layout](https://roadmap.sh/projects/image-grid)
+ - [Tooltip UI](https://roadmap.sh/projects/tooltip-ui)
