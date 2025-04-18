@@ -1,0 +1,36 @@
+.flash-card-nav {
+  padding: .8rem;
+  display: flex;
+  justify-content: space-between;
+  background: #e9e9e9;
+  border-radius: .5rem;
+}
+
+.flash-card-nav h2 {
+  font-weight: normal;
+}
+
+.flash-card-nav button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .5rem;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #565656;
+  font-size: 1.2rem;
+}
+
+.previous img {
+  transform: rotate(90deg);
+}
+
+.next img {
+  transform: rotate(-90deg);
+}
+
+.flash-card-nav h2, .flash-card-nav button {
+  text-align: center;
+  cursor: pointer;
+}

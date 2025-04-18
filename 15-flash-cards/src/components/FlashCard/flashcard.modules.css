@@ -1,0 +1,28 @@
+.flash-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: .5rem;
+  height: 300px;
+  width: 100%;
+  min-width: 50vw;
+  background: #e9e9e9;
+}
+
+.flash-card h1 {
+  width: 75%;
+}
+
+.flash-card p {
+  width: 75%;
+  font-size: 1.4rem;
+}
+
+.question {
+  display: flex;
+}
+
+.answer {
+  display: none;
+}

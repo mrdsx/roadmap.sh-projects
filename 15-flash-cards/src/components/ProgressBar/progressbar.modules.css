@@ -1,0 +1,29 @@
+* {
+  --primary-color: rgb(191, 191, 191);
+}
+
+.progress {
+  padding: .3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border: 2px solid var(--primary-color);
+  border-radius: .8rem;
+  position: relative;
+}
+
+.progress-bar {
+  background: var(--primary-color);
+  border-radius: .5rem;
+  height: 1.5rem;
+  width: 20%;
+  position: relative;
+}
+
+.fraction {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: .5rem;
+}
