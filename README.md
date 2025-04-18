@@ -21,4 +21,5 @@ The goal of this repo is to apply what I'm learning by building real-world, hand
  - [Restricted Textarea](https://roadmap.sh/projects/restricted-textarea)
  - [Accordion](https://roadmap.sh/projects/accordion)
  - [Age Calculator](https://roadmap.sh/projects/age-calculator)
+ - [Flash Cards](https://roadmap.sh/projects/flash-cards) (Not completed)
  - [Custom Dropdown](https://roadmap.sh/projects/custom-dropdown)
