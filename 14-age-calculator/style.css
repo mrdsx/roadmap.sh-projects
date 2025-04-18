@@ -12,21 +12,36 @@ body {
   gap: 1rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.2rem;
-  input {
-    border: 2px solid black;
-  }
-  button {
-    background: #525252;
-    color: white;
-    cursor: pointer;
-  }
+  padding: 2rem;
 }
 
 input, button {
   padding: .5rem;
-  width: 250px;
+  width: 100%;
+  max-width: 250px;
   border-radius: .5rem;
-  border: none;
-  outline: none;
   font-size: 1rem;
+  outline: none;
+  border: none;
+}
+
+input {
+  border: 2px solid black;
+}
+
+button {
+  background: #525252;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #3a3a3a;
+}
+
+@media (max-width: 500px) {
+  body {
+    padding: 1rem;
+  }
 }
