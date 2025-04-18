@@ -1,24 +1,25 @@
-import { useState, createContext } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import "./flashcards.modules.css";
-import { FlashCard } from "../FlashCard/FlashCard.jsx";
-import { FlashCardNavigation } from "../FlashCardNavigation/FlashCardNavigation.jsx";
-import questions from "./questions.js";
+import { FlashCard } from "../FlashCard/FlashCard";
+import { FlashCardNavigation } from "../FlashCardNavigation/FlashCardNavigation";
+import { QuestionContext } from "../../app/App";
 
-export const QuestionContext = createContext(null);
-export const CurrentQuestionContext = createContext(null);
+export const HiddenCardContext = createContext(null);
 
 export function FlashCards() {
-  const { current, setCurrent } = useState(1);
-  const { question, answer } = questions[1];
+  const [hiddenCard, setHiddenCard] = useState("answer");
+  const [current] = useContext(QuestionContext);
+  
+  useEffect(() => {
+    if (hiddenCard === "question") setHiddenCard("answer");
+  }, [current]);
 
   return (
     <div className="flash-cards">
-      <QuestionContext.Provider value={[question, answer]}>
+      <HiddenCardContext.Provider value={[hiddenCard, setHiddenCard]}>
         <FlashCard />
-      </QuestionContext.Provider>
-      <CurrentQuestionContext.Provider value={{current, setCurrent}}>
         <FlashCardNavigation />
-      </CurrentQuestionContext.Provider>
+      </HiddenCardContext.Provider>
     </div>
   );
 };
