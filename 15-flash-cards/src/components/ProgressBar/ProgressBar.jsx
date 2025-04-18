@@ -11,7 +11,9 @@ export function ProgressBar() {
   return (
     <div className="progress">
       <div className="progress-bar" style={styles}></div>
-      <div className="fraction">{current} of 5</div>
+      <div className="fraction">
+        <span>{current} of 5</span>
+      </div>
     </div>
   )
 }
