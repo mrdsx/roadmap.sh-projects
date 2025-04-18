@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Age Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/js-datepicker/dist/datepicker.min.css">
+</head>
+<body>
+  <h1>Age Calculator</h1>
+  <label for="datepicker">Enter your birth date:</label>
+  <input type="text" id="datepicker">
+  <button id="calculate-btn">Calculate</button>
+  <div class="result"></div>
+
+  <script src="https://unpkg.com/js-datepicker"></script>
+  <script type="module">
+    const picker = datepicker('#datepicker');
+  </script>
+  <script src="./script.js" type="module"></script>
+</body>
+</html>
