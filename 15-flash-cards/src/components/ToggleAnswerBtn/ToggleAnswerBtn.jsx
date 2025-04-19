@@ -1,9 +1,9 @@
-import { useContext, useState } from "react";
-import { HiddenCardContext } from "../FlashCards/FlashCards";
+import { useContext } from "react";
+import { HiddenCardContext, AnswerBtnContentContext } from "../FlashCards/FlashCards";
 
 export function ToggleAnswerBtn() {
   const [hiddenCard, setHiddenCard] = useContext(HiddenCardContext);
-  const [btnContent, setBtnContent] = useState("Show answer");
+  const [btnContent, setBtnContent] = useContext(AnswerBtnContentContext);
   
   function toggleAnswer() {
     if (hiddenCard === "answer") {

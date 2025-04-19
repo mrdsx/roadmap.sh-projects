@@ -7,6 +7,8 @@ export function NextBtn() {
   function incrementCurrent() {
     if (current < 5) {
       setCurrent(cur => cur + 1);
+    } else {
+      setCurrent(1);
     };
   };
 
@@ -15,5 +17,5 @@ export function NextBtn() {
       <span>Next</span>
       <img src="./chevron-down.svg" alt="" />
     </button>
-  )
-}
+  );
+};

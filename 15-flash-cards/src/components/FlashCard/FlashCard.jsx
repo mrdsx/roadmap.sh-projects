@@ -10,17 +10,9 @@ export function FlashCard() {
 
   const [hiddenCard] = useContext(HiddenCardContext);
 
-  const isQuestionHidden = (hiddenCard === "question") ? "hidden" : "";
-  const isAnswerHidden = (hiddenCard === "answer") ? "hidden" : "";
-
   return (
-    <>
-      <div className={`flash-card question ${isQuestionHidden}`}>
-        <h1>{question}</h1>
-      </div>
-      <div className={`flash-card answer ${isAnswerHidden}`}>
-        <p>{answer}</p>
-      </div>
-    </>
+    <div className="flash-card">
+      {(hiddenCard === "answer") ? <h1>{question}</h1> : <h3>{answer}</h3>}
+    </div>
   );
 };

@@ -7,6 +7,8 @@ export function PreviousBtn() {
   function decrementCurrent() {
     if (current > 1) {
       setCurrent(cur => cur - 1);
+    } else {
+      setCurrent(5);
     };
   };
   
@@ -15,5 +17,5 @@ export function PreviousBtn() {
       <img src="./chevron-down.svg" alt="" />
       <span>Previous</span>
     </button>
-  )
-}
+  );
+};
