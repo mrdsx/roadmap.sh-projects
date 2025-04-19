@@ -23,3 +23,4 @@ The goal of this repo is to apply what I'm learning by building real-world, hand
  - [Age Calculator](https://roadmap.sh/projects/age-calculator)
  - [Flash Cards](https://roadmap.sh/projects/flash-cards)
  - [Custom Dropdown](https://roadmap.sh/projects/custom-dropdown)
+ - [Task Tracker](https://roadmap.sh/projects/task-tracker-js)
