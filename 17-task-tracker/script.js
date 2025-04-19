@@ -8,6 +8,12 @@ const taskElements = document.getElementsByClassName("task");
 
 const taskList = document.querySelector(".task-list");
 const taskInput = document.getElementById("task-input");
+taskInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" && taskInput.value.trim().length > 0) {
+    addTask(taskInput.value);
+  };
+});
+
 const addTaskBtn = document.getElementById("add-task");
 addTaskBtn.addEventListener("click", () => {
   addTask(taskInput.value);

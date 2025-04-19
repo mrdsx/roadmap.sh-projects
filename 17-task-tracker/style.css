@@ -46,19 +46,20 @@ input[type="button"], button {
   border-radius: 5px;
 }
 
-.task-form input:nth-child(1) {
+.task-form input[type="text"] {
   padding: 0 var(--spacing) 0 var(--spacing);
   outline: none;
   width: 100%;
   font-size: 1rem;
 }
 
-.task-form input:nth-child(2) {
+.task-form input[type="button"] {
   --len: 2rem;
   min-width: var(--len);
   min-height: var(--len);
   background: black;
   color: white;
+  font-size: 1.2rem;
 }
 
 .task-list {
@@ -74,6 +75,7 @@ input[type="button"], button {
   gap: 1rem;
   border-bottom: 1px solid grey;
 }
+
 .task.completed p {
   color: grey;
   text-decoration: line-through;
