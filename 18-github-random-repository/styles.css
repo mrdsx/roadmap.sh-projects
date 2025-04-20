@@ -99,11 +99,11 @@ main {
 }
 
 #refresh {
-  --refresh-background-clr: black;
-  --refresh-background-hover-clr: rgb(27, 27, 27);
+  --refresh-btn-background: black;
+  --refresh-btn-background-hover: rgb(27, 27, 27);
   height: 2.5rem;
   width: 100%;
-  background: var(--refresh-background-clr);
+  background: var(--refresh-btn-background);
   color: white;
   font-size: 1.1rem;
   border: none;
@@ -112,7 +112,7 @@ main {
   display: none;
 }
 #refresh:hover {
-  background: var(--refresh-background-hover-clr);
+  background: var(--refresh-btn-background-hover);
 }
 
 .repository, #refresh {

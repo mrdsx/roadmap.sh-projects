@@ -1,5 +1,9 @@
 import { Octokit } from "https://esm.sh/@octokit/core";
-const octokit = new Octokit({ auth: API_KEY });
+const octokit = new Octokit();
+
+// use code below if you have your own API key
+//
+// const octokit = new Octokit({ auth: API_KEY });
 
 const languagesUrl = "https://raw.githubusercontent.com/kamranahmedse/githunt/master/src/components/filters/language-filter/languages.json";
 
@@ -11,7 +15,7 @@ refreshBtn.addEventListener("click", () => {
   getRepositoryInfo.apply(label);
 });
 
-async function getLanguages() {
+async function fetchLanguages() {
   const response = await fetch(languagesUrl);
   const data = await response.json();
 
@@ -22,7 +26,7 @@ async function renderLanguages() {
   const ul = document.createElement("ul");
   dropdownList.appendChild(ul);
 
-  const languages = await getLanguages();
+  const languages = await fetchLanguages();
   languages.forEach((lang) => {
     const li = document.createElement("li");
     li.textContent = lang.title;
@@ -46,7 +50,7 @@ async function fetchRepository() {
     });
     return response.data.items;
   } catch {
-    showError();
+    renderStatus("error");
   }
 }
 
@@ -62,11 +66,13 @@ async function getRepositoryInfo() {
   repository.querySelectorAll("div").forEach((elem) => {
     elem.remove();
   });
-  renderLoadingScreen();
+  renderStatus("default");
 
   const data = await fetchRepository.call(this);
-  const { name, description, language, stargazers_count, forks, open_issues, svn_url } = data[randomIndex];
-  renderRepository(name, description, language, stargazers_count, forks, open_issues, svn_url);
+  const { name, description, language, stargazers_count,
+          forks, open_issues, svn_url } = data[randomIndex];
+  renderRepository(name, description, language, stargazers_count,
+                    forks, open_issues, svn_url);
 }
 
 function renderRepository(name, description, language, starsCount, forksCount, issuesCount, url) {
@@ -112,23 +118,26 @@ function renderRepository(name, description, language, starsCount, forksCount, i
   repository.append(repoName, repoDescription, repoStats);
 }
 
-function renderLoadingScreen() {
-  repository.style.backgroundColor = "var(--repo-background-clr)";
+function renderStatus(type) {
+  const defaultBackground = "var(--repo-background-clr)";
+  const errorBackground = "var(--error-repo-background-clr)";
+  const refreshBtnBackground = (type === "default") ? "black" : "red";
+  const refreshBtnBackgroundHover = (type === "default") ?
+                                    "rgb(27, 27, 27)" :
+                                    "rgb(228, 0, 0)";
+
+  repository.style.backgroundColor = (type === "default") ?
+                                      defaultBackground :
+                                      errorBackground;
   repository.classList.remove("got-repo");
-  info.textContent = "Loading, please wait...";
-  info.style.display = "flex";
   
-  refreshBtn.style.setProperty("--refresh-background-clr", "black");
-  refreshBtn.style.setProperty("--refresh-background-hover-clr", "rgb(27, 27, 27)");
-}
+  info.textContent = (type === "default") ?
+                      "Loading, please wait..." :
+                      "Error fetching repositories";
+  info.style.display = "flex";
 
-function showError() {
-  repository.style.backgroundColor = "var(--error-repo-background-clr)";
-  repository.classList.remove("got-repo");
-  info.textContent = "Error fetching repositories";
-
-  refreshBtn.style.setProperty("--refresh-background-clr", "red");
-  refreshBtn.style.setProperty("--refresh-background-hover-clr", "rgb(228, 0, 0)");
+  refreshBtn.style.setProperty("--refresh-btn-background", refreshBtnBackground);
+  refreshBtn.style.setProperty("--refresh-btn-background-hover", refreshBtnBackgroundHover);
 }
 
 function showRefreshBtn() {
