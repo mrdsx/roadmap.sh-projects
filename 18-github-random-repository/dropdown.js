@@ -1,4 +1,4 @@
-const dropdown = document.querySelector(".dropdown")
+const dropdown = document.querySelector(".dropdown");
 const dropdownBtn = dropdown.querySelector(".dropdown-btn");
 const dropdownList = dropdown.querySelector(".dropdown-list");
 
