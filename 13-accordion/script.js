@@ -9,5 +9,5 @@ function showAnswer(answerId) {
     answer.style.display = "block";
   } else {
     answer.style.display = "none";
-  };
-};
+  }
+}

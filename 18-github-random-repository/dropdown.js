@@ -1,4 +1,4 @@
-const dropdown = document.querySelector(".dropdown");
+const dropdown = document.querySelector(".dropdown")
 const dropdownBtn = dropdown.querySelector(".dropdown-btn");
 const dropdownList = dropdown.querySelector(".dropdown-list");
 
@@ -10,10 +10,8 @@ dropdownBtn.addEventListener("click", () => {
   icon.classList.toggle("active", isActive);
 });
 
-dropdownList.querySelectorAll("li").forEach((item) => {
-  item.addEventListener("click", () => {
-    label.innerHTML = item.textContent;
-    dropdownList.classList.remove("active");
-    icon.classList.remove("active");
-  });
-});
+function hideDropdown() {
+  label.innerHTML = this.textContent;
+  dropdownList.classList.remove("active");
+  icon.classList.remove("active");
+}

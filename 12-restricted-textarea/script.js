@@ -13,5 +13,5 @@ textareaInput.addEventListener('input', function(e) {
     textarea.style.setProperty("--c", "red");
   } else {
     textarea.style.setProperty("--c", "black");
-  };
+  }
 });

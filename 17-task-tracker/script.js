@@ -11,7 +11,7 @@ const taskInput = document.getElementById("task-input");
 taskInput.addEventListener("keydown", (e) => {
   if (e.key === "Enter" && taskInput.value.trim().length > 0) {
     addTask(taskInput.value);
-  };
+  }
 });
 
 const addTaskBtn = document.getElementById("add-task");
@@ -23,22 +23,22 @@ function addTask(task) {
   if (task.trim().length > 0) {
     tasks.push({ task: task, isCompleted: false });
     taskInput.value = "";
-  };
+  }
   updateTasksInStorage();
   renderTasks();
-};
+}
 
 function deleteTask(index) {
   tasks.splice(index, 1);
   updateTasksInStorage();
   renderTasks();
-};
+}
 
 function toggleCompleteness(index) {
   tasks[index].isCompleted = !tasks[index].isCompleted;
   updateTasksInStorage();
   renderTasks();
-};
+}
 
 function renderTasks() {
   taskList.innerHTML = "";
@@ -73,4 +73,4 @@ renderTasks();
 
 function updateTasksInStorage() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
-};
+}

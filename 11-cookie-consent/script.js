@@ -8,9 +8,9 @@ if (cookieConsent) hideCookieWindow(".cookie-window");
 
 function hideCookieWindow(windowClassName) {
   document.querySelector(windowClassName).style.display = "none";
-};
+}
 
 function acceptCookies() {
   localStorage.setItem("cookie-consent", true);
   hideCookieWindow(".cookie-window");
-};
+}

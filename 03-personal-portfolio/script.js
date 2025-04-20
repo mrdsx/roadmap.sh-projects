@@ -20,8 +20,8 @@ function toggleTheme() {
     body.classList.add("dark");
     localStorage.setItem("theme", "dark");
     displaySunIcon();
-  };
-};
+  }
+}
 
 function displaySunIcon() {
   sunIcon.style.display = "block";

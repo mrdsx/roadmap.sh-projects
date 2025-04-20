@@ -26,7 +26,7 @@ function validateNameField(input, form) {
   const MESSAGE = "Name is required";
   const isEmpty = input.value.trim().length === 0;
   updateInputStyles(form, input, isEmpty, isEmpty ? MESSAGE : "");
-};
+}
 
 function validateEmailField(input, form) {
   const value = input.value.trim();
@@ -36,8 +36,8 @@ function validateEmailField(input, form) {
     updateInputStyles(form, input, true, "Invalid email");
   } else {
     updateInputStyles(form, input, false);
-  };
-};
+  }
+}
 
 function validatePasswordField(input, form) {
   const value = input.value;
@@ -47,8 +47,8 @@ function validatePasswordField(input, form) {
     updateInputStyles(form, input, true, "Password must contain at least 8 characters");
   } else {
     updateInputStyles(form, input, false);
-  };
-};
+  }
+}
 
 function validateConfirmPassword(passInput, confirmInput, form) {
   if (!confirmInput.value.trim()) {
@@ -57,8 +57,8 @@ function validateConfirmPassword(passInput, confirmInput, form) {
     updateInputStyles(form, confirmInput, true, "Password must be the same");
   } else {
     updateInputStyles(form, confirmInput, false);
-  };
-};
+  }
+}
 
 function updateInputStyles(form, input, isError, errorMessage) {
   input.style.border = isError ? "2px solid red" : "2px solid black";
@@ -68,10 +68,10 @@ function updateInputStyles(form, input, isError, errorMessage) {
   if (errorElement) {
     errorElement.style.display = isError ? "block" : "none";
     if (errorMessage) errorElement.innerText = errorMessage;
-  };
-};
+  }
+}
 
 function validateEmail(email) {
   const re = /\S+@\S+\.\S+/;
   return re.test(email);
-};
+}

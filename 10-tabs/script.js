@@ -7,7 +7,7 @@ function openTab(event, tabId) {
 
   document.getElementById(tabId).style.display = "block";
   event.target.classList.add("active");
-};
+}
 
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelector('.tab-content').style.display = 'block';
