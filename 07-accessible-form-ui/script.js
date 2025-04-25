@@ -2,76 +2,74 @@ const ERROR_COLOR = "rgb(255, 111, 111)";
 const VALID_COLOR = "grey";
 const MIN_PASS_LENGTH = 8;
 
-const profileInfoForm = document.querySelector("#profile-info-form");
-const nameForm = profileInfoForm.querySelector("#name-input");
-const emailForm = profileInfoForm.querySelector("#email-input");
-const passForm = profileInfoForm.querySelector("#password-input");
-const confirmPassForm = profileInfoForm.querySelector("#confirm-password-input");
+const validationRules = {
+  name: {
+    validate: val => val.length > 0,
+    errorMsg: "Name is required"
+  },
+  email: {
+    validate: val => val.length > 0 && validateEmail(val),
+    errorMsg: "Invalid email"
+  },
+  password: {
+    validate: val => val.length >= MIN_PASS_LENGTH,
+    errorMsg: "Password must be at least 8 characters"
+  },
+  "confirm-password": {
+    validate: val => val === passInput.value,
+    errorMsg: "Passwords do not match"
+  }
+};
 
-const nameInput = nameForm.querySelector("#name");
-const emailInput = emailForm.querySelector("#email");
+const profileInfoForm = document.querySelector("#profile-info");
+const passForm = profileInfoForm.querySelector("#password-form");
 const passInput = passForm.querySelector("#password");
-const confirmPassInput = confirmPassForm.querySelector("#confirm-password");
+
+const fields = ["name", "email", "password", "confirm-password"];
 
 profileInfoForm.addEventListener("submit", function (e) {
   e.preventDefault();
-
-  validateNameField(nameInput, nameForm);
-  validateEmailField(emailInput, emailForm);
-  validatePasswordField(passInput, passForm);
-  validateConfirmPassword(passInput, confirmPassInput, confirmPassForm);
+  fields.forEach((field) => {
+    validateField(field);
+  });
 });
 
-function validateNameField(input, form) {
-  const MESSAGE = "Name is required";
-  const isEmpty = input.value.trim().length === 0;
-  updateInputStyles(form, input, isEmpty, isEmpty ? MESSAGE : "");
-}
-
-function validateEmailField(input, form) {
+function validateField(fieldName) {
+  const form = profileInfoForm.querySelector(`#${fieldName}-form`);
+  const input = form.querySelector(`#${fieldName}`);
   const value = input.value.trim();
-  if (!value) {
-    updateInputStyles(form, input, true, "Email is required");
-  } else if (!validateEmail(value)) {
-    updateInputStyles(form, input, true, "Invalid email");
-  } else {
-    updateInputStyles(form, input, false);
-  }
+
+  const rule = validationRules[fieldName];
+  const isInvalid = !rule.validate(value);
+
+  setFormStyles(form, input, isInvalid, isInvalid ? rule.errorMsg : "");
 }
 
-function validatePasswordField(input, form) {
-  const value = input.value;
-  if (!value.trim()) {
-    updateInputStyles(form, input, true, "Password is required");
-  } else if (value.length < MIN_PASS_LENGTH) {
-    updateInputStyles(form, input, true, "Password must contain at least 8 characters");
-  } else {
-    updateInputStyles(form, input, false);
-  }
+function setFormStyles(form, input, isInvalid, invalidMsg) {
+  changeInputStyles(input, isInvalid);
+  changeErrorMsgStyles(form, isInvalid, invalidMsg);
 }
 
-function validateConfirmPassword(passInput, confirmInput, form) {
-  if (!confirmInput.value.trim()) {
-    updateInputStyles(form, confirmInput, true, "Password is required");
-  } else if (passInput.value !== confirmInput.value) {
-    updateInputStyles(form, confirmInput, true, "Password must be the same");
-  } else {
-    updateInputStyles(form, confirmInput, false);
-  }
+function changeInputStyles(input, isInvalid) {
+  input.style.border = isInvalid ? "2px solid red" : "2px solid black";
+  input.style.setProperty("--c", isInvalid ? ERROR_COLOR : VALID_COLOR);
 }
 
-function updateInputStyles(form, input, isError, errorMessage) {
-  input.style.border = isError ? "2px solid red" : "2px solid black";
-  input.style.setProperty("--c", isError ? ERROR_COLOR : VALID_COLOR);
-
-  const errorElement = form.querySelector(".error-message");
-  if (errorElement) {
-    errorElement.style.display = isError ? "block" : "none";
-    if (errorMessage) errorElement.innerText = errorMessage;
-  }
+function changeErrorMsgStyles(form, isInvalid, invalidMsg) {
+  const errorMsg = form.querySelector(".error-message");
+  errorMsg.style.display = isInvalid ? "block" : "none";
+  errorMsg.innerText = isInvalid ? invalidMsg : "";
 }
+
 
 function validateEmail(email) {
-  const re = /\S+@\S+\.\S+/;
-  return re.test(email);
+  return /\S+@\S+\.\S+/.test(email);
+}
+
+function validatePassword(pass) {
+  return pass.length >= MIN_PASS_LENGTH;
+}
+
+function comparePasswords(pass1, pass2) {
+  return pass1 === pass2;
 }

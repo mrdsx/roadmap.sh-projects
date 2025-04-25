@@ -36,7 +36,7 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    .profile-info-input {
+    .profile-info-form {
       margin-bottom: 1rem;
       display: flex;
       flex-direction: column;

@@ -7,28 +7,38 @@ if (!theme) {
   localStorage.setItem("theme", "light");
 } else if (theme === "dark") {
   body.classList.add("dark");
-  displaySunIcon();
+  showIcon("sunIcon");
 }
 
 function toggleTheme() {
-  theme = (theme === "dark") ? "light" : "dark";
-  if (theme === "light") {
-    body.classList.remove("dark");
-    localStorage.setItem("theme", "light");
-    displayMoonIcon();
+  const nextTheme = (theme === "dark") ? "light" : "dark";
+  if (nextTheme === "light") {
+    setTheme("light");
   } else {
-    body.classList.add("dark");
-    localStorage.setItem("theme", "dark");
-    displaySunIcon();
+    setTheme("dark");
   }
 }
 
-function displaySunIcon() {
-  sunIcon.style.display = "block";
-  moonIcon.style.display = "none";
+function setTheme(themeColor) {
+  if (themeColor === "light") {
+    theme = "light";
+    body.classList.remove("dark");
+    localStorage.setItem("theme", "light");
+    showIcon("moonIcon");
+  } else {
+    theme = "dark";
+    body.classList.add("dark");
+    localStorage.setItem("theme", "dark");
+    showIcon("sunIcon");
+  }
 }
 
-function displayMoonIcon() {
-  sunIcon.style.display = "none";
-  moonIcon.style.display = "block";
+function showIcon(icon) {
+  if (icon === "sunIcon") {
+    sunIcon.style.display = "block";
+    moonIcon.style.display = "none";
+  } else {
+    sunIcon.style.display = "none";
+    moonIcon.style.display = "block";
+  }
 }
