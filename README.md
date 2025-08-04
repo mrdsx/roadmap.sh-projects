@@ -25,3 +25,9 @@ The goal of this repo is to apply what I'm learning by building real-world, hand
  - [Custom Dropdown](https://roadmap.sh/projects/custom-dropdown)
  - [Task Tracker](https://roadmap.sh/projects/task-tracker-js)
  - [GitHub Random Repository](https://roadmap.sh/projects/github-random-repo)
+
+## Tech Stack
+
+![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
